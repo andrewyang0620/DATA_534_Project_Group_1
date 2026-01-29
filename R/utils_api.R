@@ -10,7 +10,7 @@ bc_get <- function(path, query = list()) {
 
   path <- sub("^/+", "", path)
 
-  req <- httr2::request("https://www.bclaws.ca/civix") |>
+  req <- httr2::request(bc_base_url()) |>
     httr2::req_url_path_append(path) |>
     httr2::req_url_query(!!!query)
 
