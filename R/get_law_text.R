@@ -6,10 +6,10 @@
 #' @export    
 get_law_text <- function(law_type, law_id, collapse_whitespace = TRUE) {
   if (!is.character(law_type) || length(law_type) != 1L) {
-    stop("`law_type` must be a length-1 character vector.", call. = FALSE)
+    stop("law_type error", call. = FALSE)
   }
   if (!is.character(law_id) || length(law_id) != 1L) {
-    stop("`law_id` must be a length-1 character vector.", call. = FALSE)
+    stop("law_id error", call. = FALSE)
   }
 
   path <- paste("document/id/complete", law_type, law_id, sep = "/")
@@ -22,7 +22,7 @@ get_law_text <- function(law_type, law_id, collapse_whitespace = TRUE) {
   full_text <- xml2::xml_text(doc)
   if (grepl("404 error", full_text, ignore.case = TRUE)) {
     stop(
-      "BC Laws returned a 404 page for this law_type / law_id. ",
+      "404 page for this law_type / law_id. ",
       "Please check that the identifier exists on BC Laws.",
       call. = FALSE
     )
