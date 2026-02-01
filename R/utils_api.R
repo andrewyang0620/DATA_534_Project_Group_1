@@ -3,7 +3,6 @@ bc_base_url <- function() {
   "https://www.bclaws.ca/civix"
 }
 
-#' Low-level helper to call BC Laws API
 #' @keywords internal
 bc_get <- function(path, query = list()) {
   stopifnot(is.character(path), length(path) == 1)

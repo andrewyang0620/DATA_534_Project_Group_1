@@ -6,7 +6,7 @@
 #' @param n_frag Integer. Number of text fragments per hit.
 #' @param l_frag Integer. Max length of each fragment.
 #'
-#' @return An xml_document with raw search results.
+#' @return An xml_document (or html_document) with raw search results.
 #' @export
 search_laws <- function(query_string, start = 0, end = 20, n_frag = 5, l_frag = 100) {
 
@@ -22,7 +22,22 @@ search_laws <- function(query_string, start = 0, end = 20, n_frag = 5, l_frag = 
 
   resp <- bc_get(
     path  = "search/complete/fullsearch",
-    query = list(q= query_string, s = as.integer(start), e = as.integer(end), nFrag = as.integer(n_frag), lFrag = as.integer(l_frag))
+    query = list(
+      q     = query_string,
+      s     = as.integer(start),
+      e     = as.integer(end),
+      nFrag = as.integer(n_frag),
+      lFrag = as.integer(l_frag)
+    )
   )
-  xml2::read_xml(httr2::resp_body_string(resp))
+
+  body <- httr2::resp_body_string(resp)
+  doc <- tryCatch(
+    xml2::read_xml(body),
+    error = function(e) {
+      xml2::read_html(body)
+    }
+  )
+
+  doc
 }

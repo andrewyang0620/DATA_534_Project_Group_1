@@ -3,24 +3,21 @@
 #' Count how many search hits a keyword has per year and law type.
 #'
 #' @param keyword Character. Search keyword.
-#' @param from Integer. Start year (e.g. 1990).
-#' @param to Integer. End year (e.g. 2025).
-#' @param type Character. One of "all", "statute", "statreg".
+#' @param from Integer. Start year
+#' @param to Integer. End year
+#' @param type Character.
 #'
 #' @return A data.frame with columns: year, law_type, count.
 #' @export
-keyword_trend <- function(keyword,
-                          from,
-                          to,
-                          type = c("all", "statute", "statreg")) {
+keyword_trend <- function(keyword, from, to, type = c("all", "statute", "statreg")) {
 
   type <- match.arg(type)
 
   if (!is.character(keyword) || length(keyword) != 1L) {
-    stop("keyword must be length-1 character", call. = FALSE)
+    stop("keyword length error", call. = FALSE)
   }
   if (!is.numeric(from) || !is.numeric(to) || length(from) != 1L || length(to) != 1L) {
-    stop("from/to must be length-1 numeric", call. = FALSE)
+    stop("time error", call. = FALSE)
   }
 
   from <- as.integer(from)
@@ -30,7 +27,7 @@ keyword_trend <- function(keyword,
     stop("from must be <= to", call. = FALSE)
   }
 
-  xml  <- search_laws(keyword, start = 0, end = 200)
+  xml  <- search_laws(keyword, start = 0, end = 20)
   hits <- parse_search_results(xml)
 
   if (nrow(hits) == 0L) {
