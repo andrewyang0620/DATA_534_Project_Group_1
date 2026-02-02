@@ -3,6 +3,7 @@
 #' @param law_type Character
 #' @param law_id Character
 #' @return Character scalar containing the plain text of the law
+#' @param collapse_whitespace Logical. If TRUE, collapse whitespace to single spaces.
 #' @export    
 get_law_text <- function(law_type, law_id, collapse_whitespace = TRUE) {
   if (!is.character(law_type) || length(law_type) != 1L) {

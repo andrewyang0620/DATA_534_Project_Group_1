@@ -7,7 +7,7 @@
 #' @param pages Integer. How many pages to try
 #' @param page_size Integer.
 #'
-#' @return
+#' @return A data.frame with columns year, law_type, and count.
 #' @export
 keyword_trend_paged <- function(keyword, from, to, type = c("all"), pages = 2L, page_size = 20L) {
 

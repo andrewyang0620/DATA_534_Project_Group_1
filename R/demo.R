@@ -4,6 +4,9 @@
 #' @param to Integer. End year.
 #' @param type Character.
 #' @param use_ai t/f
+#' @param pages Integer. Number of pages to fetch.
+#' @param page_size Integer. Page size (number of results per page).
+
 #'
 #' @return Invisibly returns the trend data frame.
 #' @export
