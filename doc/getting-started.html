@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>getting-started</title>
+
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">getting-started</h1>
+
+
+
+<ol start="0" style="list-style-type: decimal">
+<li>Load the Packages</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bclaws)</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Search Laws</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>doc <span class="ot">&lt;-</span> <span class="fu">search_laws</span>(<span class="st">&quot;tax&quot;</span>, <span class="dv">0</span>, <span class="dv">20</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>hits <span class="ot">&lt;-</span> <span class="fu">parse_search_results</span>(doc)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hits, <span class="dv">5</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                               title law_type        law_id</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Point in Time - Tax Appeals Regulation - 135/2024  statreg  135_2024_pit</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Point in Time - Tax Appeals Regulation - 135/2024  statreg 135_2024_pita</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Point in Time - Tax Appeals Regulation - 135/2024  statreg 135_2024_pitb</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Point in Time - Tax Appeals Regulation - 135/2024  statreg 135_2024_pitc</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Point in Time - Tax Appeals Regulation - 135/2024  statreg 135_2024_pitd</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                                           loc</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 -- C --/13_Carbon Tax Act [SBC 2008] c. 40/98_Regulations Point in Time/13_135_2024_pit.xml</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 -- C --/13_Carbon Tax Act [SBC 2008] c. 40/98_Regulations Point in Time/13_135_2024_pit.xml</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 -- C --/13_Carbon Tax Act [SBC 2008] c. 40/98_Regulations Point in Time/13_135_2024_pit.xml</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 -- C --/13_Carbon Tax Act [SBC 2008] c. 40/98_Regulations Point in Time/13_135_2024_pit.xml</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 -- C --/13_Carbon Tax Act [SBC 2008] c. 40/98_Regulations Point in Time/13_135_2024_pit.xml</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   hits</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    1</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    2</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    3</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    4</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    5</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Keyword trend</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>trend <span class="ot">&lt;-</span> <span class="fu">keyword_trend_paged</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">keyword   =</span> <span class="st">&quot;tax&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">from      =</span> <span class="dv">1990</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">to        =</span> <span class="dv">2025</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type      =</span> <span class="st">&quot;all&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">pages     =</span> <span class="dv">30</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">page_size =</span> <span class="dv">20</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">head</span>(trend, <span class="dv">10</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    year law_type count</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  1996  statreg   405</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  1998  statreg     2</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  1999  statreg     1</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  2002  statreg     1</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  2003  statreg    17</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  2004  statreg     4</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  2007  statreg     3</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  2008  statreg    22</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  2010  statreg     2</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2012  statreg   104</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Plot keyword trend</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.data.frame</span>(trend) <span class="sc">&amp;&amp;</span> <span class="fu">nrow</span>(trend) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_keyword_trend</span>(trend, <span class="st">&quot;tax&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Trend empty.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; Law types in trend_data:
+#&gt; 
+#&gt; statreg 
+#&gt;      16</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Fetch Full Law Text (1st hit)</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.data.frame</span>(hits) <span class="sc">&amp;&amp;</span> <span class="fu">nrow</span>(hits) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  first <span class="ot">&lt;-</span> hits[<span class="dv">1</span>, ]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  txt <span class="ot">&lt;-</span> <span class="fu">get_law_text</span>(first<span class="sc">$</span>law_type, first<span class="sc">$</span>law_id)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(txt, <span class="dv">1</span>, <span class="dv">500</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;No hits; skip full-text fetch.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Copyright © King&#39;s Printer, Victoria, British Columbia, CanadaLicenceDisclaimer\&quot;Point in Time\&quot; Regulation ContentCarbon Tax, Employer Health Tax, Insurance Premium Tax, Logging Tax, Mineral Tax, Motor Fuel Tax, Property Transfer Tax, Provincial Sales Tax, Residential Property (Short-Term Holding) Profit Tax, Speculation and Vacancy Tax and Tobacco Tax ActsTax Appeals Regulation B.C. Reg. 135/2024 </span><span class="al">NOTE</span><span class="co">: Links below go to regulation content as it was prior to the changes made on the effective date&quot;</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>AI Summary of the trend data</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # requires OPENAI_API_KEY:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary_txt &lt;- summarize_keyword_trend(trend, &quot;tax&quot;, from=1990, to=2025, type=&quot;all&quot;)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cat(summary_txt)</span></span></code></pre></div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
