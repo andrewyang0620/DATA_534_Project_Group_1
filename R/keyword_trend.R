@@ -1,7 +1,5 @@
 #' Keyword trend of BC laws
 #'
-#' Count how many search hits a keyword has per year and law type.
-#'
 #' @param keyword Character. Search keyword.
 #' @param from Integer. Start year
 #' @param to Integer. End year
@@ -9,7 +7,7 @@
 #'
 #' @return A data.frame with columns: year, law_type, count.
 #' @export
-keyword_trend <- function(keyword, from, to, type = c("all", "statute", "statreg")) {
+keyword_trend <- function(keyword, from, to, type = c("all")) {
 
   type <- match.arg(type)
 

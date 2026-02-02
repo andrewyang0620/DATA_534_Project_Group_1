@@ -2,12 +2,12 @@
 #' @param keyword Character. Search keyword.
 #' @param from Integer. Start year.
 #' @param to Integer. End year.
-#' @param type Character. all, statute, statreg.
+#' @param type Character.
 #' @param use_ai t/f
 #'
 #' @return Invisibly returns the trend data frame.
 #' @export
-demo_keyword_trend <- function(keyword, from = 1990, to = 2025, type = c("all", "statute", "statreg"), use_ai = FALSE) {
+demo_keyword_trend <- function(keyword, from = 1990, to = 2025, type = c("all"), pages = 30L, page_size = 20L, use_ai = FALSE) {
 
   type <- match.arg(type)
 
@@ -16,7 +16,14 @@ demo_keyword_trend <- function(keyword, from = 1990, to = 2025, type = c("all", 
   cat("Type:", type, "\n\n")
 
   cat("Getting keyword trend...\n")
-  trend <- keyword_trend(keyword, from = from, to = to, type = type)
+  trend <- keyword_trend_paged(
+    keyword = keyword,
+    from = from,
+    to = to,
+    type = type,
+    pages = pages,
+    page_size = page_size
+  )
 
   if (nrow(trend) == 0L) {
     cat("No results\n")

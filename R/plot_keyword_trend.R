@@ -1,7 +1,7 @@
 #' Plot keyword trend
 #'
 #' @param trend_data A data.frame returned by keyword_trend().
-#' @param keyword Character. The keyword (for plot title).
+#' @param keyword Character.
 #'
 #' @return Invisibly returns NULL.
 #' @export

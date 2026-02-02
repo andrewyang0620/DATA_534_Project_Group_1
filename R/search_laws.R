@@ -6,7 +6,7 @@
 #' @param n_frag Integer. Number of text fragments per hit.
 #' @param l_frag Integer. Max length of each fragment.
 #'
-#' @return An xml_document (or html_document) with raw search results.
+#' @return An xml_document with raw search results.
 #' @export
 search_laws <- function(query_string, start = 0, end = 20, n_frag = 5, l_frag = 100) {
 
