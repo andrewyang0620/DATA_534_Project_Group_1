@@ -7,7 +7,7 @@
 parse_search_results(xml_doc)
 }
 \arguments{
-\item{xml_doc}{An xml_document returned by search_laws().}
+\item{xml_doc}{An xml_document returned by \code{\link[=search_laws]{search_laws()}}.}
 }
 \value{
 A data.frame with one row per search hit.
@@ -15,4 +15,3 @@ A data.frame with one row per search hit.
 \description{
 Parse BC Laws search results
 }
-\keyword{internal}

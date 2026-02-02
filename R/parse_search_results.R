@@ -1,8 +1,8 @@
 #' Parse BC Laws search results
 #'
-#' @param xml_doc An xml_document returned by search_laws().
+#' @param xml_doc An xml_document returned by [search_laws()].
 #' @return A data.frame with one row per search hit.
-#' @keywords internal
+#' @export
 parse_search_results <- function(xml_doc) {
   if (!inherits(xml_doc, "xml_document")) {
     stop("xml_doc must be xml_document", call. = FALSE)
