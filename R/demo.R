@@ -37,14 +37,11 @@ demo_keyword_trend <- function(keyword, from = 1990, to = 2025, type = c("all"),
   cat("Plotting keyword trend...\n")
   plot_keyword_trend(trend, keyword)
 
-#   if (isTRUE(use_ai)) {
-#     cat("[3/3] Getting AI summary...\n")
-#     summary_txt <- summarize_keyword_trend(trend, keyword)
-#     cat("\n=== AI summary ===\n")
-#     cat(summary_txt, "\n")
-#   } else {
-#     cat("[3/3] Skipping AI summary (use_ai = FALSE).\n")
-#   }
-
+  if (isTRUE(use_ai)) {
+    cat("[3/3] Getting AI summary...\n")
+    summary_txt <- summarize_keyword_trend(trend, keyword, from = from, to = to, type = type)
+    cat("\n=== AI summary ===\n")
+    cat(summary_txt, "\n")
+  }
   invisible(trend)
 }
