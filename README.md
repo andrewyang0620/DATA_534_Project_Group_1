@@ -10,7 +10,6 @@ Course project for **DATA 534**
 - Yiran Wang
 - Zihao Zhao
 
----
 
 ## Features
 
@@ -21,7 +20,6 @@ Course project for **DATA 534**
 - **Fetch full text** for a given law (`get_law_text()`)
 - **AI summary generation** for a given law (`summarize_keyword_trend()`)
 
----
 
 ## Dependencies
 
@@ -32,7 +30,6 @@ This package requires the following R packages:
 
 These dependencies will be automatically installed when you install the package.
 
----
 
 ## Data Source
 
@@ -42,7 +39,6 @@ This package wraps the **BC Laws Civix REST API** provided by the Government of 
 - **Official website**: [BC Laws](https://www.bclaws.gov.bc.ca/)
 - **License**: The data is provided by the BC government and subject to their terms of use
 
----
 
 ## Rate Limiting & Usage Note
 - **Possible rate limits**: The API may throttle or block requests if too many are made in a short period
@@ -50,7 +46,6 @@ This package wraps the **BC Laws Civix REST API** provided by the Government of 
 - **Timeout handling**: Functions may become slow or hang if rate limited. Consider setting appropriate timeouts
 - **Polite usage**: Avoid making excessive requests; cache results when possible
 
----
 
 ## Installation
 
