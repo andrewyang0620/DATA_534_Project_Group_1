@@ -10,6 +10,8 @@ Course project for **DATA 534**
 - Yiran Wang
 - Zihao Zhao
 
+**Individual diary**: see `docs/individual-diary/` for each member's development log.
+
 
 ## Features
 
@@ -131,6 +133,8 @@ substr(txt, 1, 600)
 
 ## Vignette
 A full end-to-end workflow (including plotting) is in: `vignettes/getting-started.Rmd`
+
+A HTML version of the vignette is available [here](docs/vignettes/getting-started.html).
 
 Build vignettes locally:
 ```r
