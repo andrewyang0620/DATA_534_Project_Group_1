@@ -1,0 +1,23 @@
+Package: bclaws
+Title: BC Laws API Wrapper
+Version: 0.0.1
+Authors@R: c(
+    person("Jingtao", "Yang", email = "yangjingtaoitb@gmail.com", role = c("aut", "cre")),
+    person("Yiran", "Wang", role = "aut"),
+    person("Zihao", "Zhao", role = "aut")
+  )
+Description: An R package that wraps the BC Laws Civix REST endpoints to search laws,
+    parse results, compute simple keyword trends across years, and fetch plain-text law content.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    httr2,
+    xml2
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr

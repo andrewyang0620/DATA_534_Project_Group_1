@@ -1,0 +1,70 @@
+---
+title: "getting-started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting-started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE,
+  error = TRUE
+)
+```
+
+0. Load the Packages
+```{r}
+library(bclaws)
+```
+
+1. Search Laws
+```{r}
+doc <- search_laws("tax", 0, 20)
+hits <- parse_search_results(doc)
+head(hits, 5)
+```
+
+2. Keyword trend
+```{r}
+trend <- keyword_trend_paged(
+  keyword   = "tax",
+  from      = 1990,
+  to        = 2025,
+  type      = "all",
+  pages     = 30,
+  page_size = 20
+)
+utils::head(trend, 10)
+```
+
+3. Plot keyword trend
+```{r}
+if (is.data.frame(trend) && nrow(trend) > 0) {
+  plot_keyword_trend(trend, "tax")
+} else {
+  cat("Trend empty.\n")
+}
+```
+
+4. Fetch Full Law Text (1st hit)
+```{r}
+if (is.data.frame(hits) && nrow(hits) > 0) {
+  first <- hits[1, ]
+  txt <- get_law_text(first$law_type, first$law_id)
+  substr(txt, 1, 500)
+} else {
+  cat("No hits; skip full-text fetch.\n")
+}
+```
+
+5. AI Summary of the trend data
+```{r eval=FALSE}
+# # requires OPENAI_API_KEY:
+# summary_txt <- summarize_keyword_trend(trend, "tax", from=1990, to=2025, type="all")
+# cat(summary_txt)
+```
